@@ -130,6 +130,7 @@ class Anything_Order_Taxonomy extends Anything_Order_Base {
     function get_object_terms( $terms, $object_ids, $taxonomies, $args ) {
         // 'term_order' == $args['orderby'] ... Enable only specified orderby argument.
         $do_term_order = true;
+        $order = '';
 
         if ( ! $terms || is_wp_error( $terms ) || ! $do_term_order ) {
             return $terms;
