@@ -288,12 +288,12 @@ class Anything_Order_Taxonomy extends Anything_Order_Base {
         if ( $do_term_order || ( is_admin() && ! isset( $_GET['orderby'] ) ) ) {
             if ( 'term_order' != $args['orderby'] ) {
                 $orderby = implode( ',', array_filter( array(
-                    'tr.term_order ASC',
+                    'aotr.term_order ASC',
                     str_replace( 'ORDER BY ', '', $pieces['orderby'] )
                 ) ) );
 
             }else{
-                $orderby = 'tr.term_order';
+                $orderby = 'aotr.term_order';
 
                 if ( empty( $pieces['order'] ) ) {
                     $pieces['order'] = 'ASC';
@@ -301,8 +301,8 @@ class Anything_Order_Taxonomy extends Anything_Order_Base {
             }
 
             $pieces['orderby']  = 'ORDER BY ' . $orderby;
-            $pieces['fields' ] .= ',tr.term_order';
-            $pieces['join'   ] .= " LEFT JOIN $wpdb->term_relationships AS tr ON (tr.term_taxonomy_id = tt.term_taxonomy_id AND tr.object_id = 0)";
+            $pieces['fields' ] .= ',aotr.term_order';
+            $pieces['join'   ] .= " LEFT JOIN $wpdb->term_relationships AS aotr ON (aotr.term_taxonomy_id = tt.term_taxonomy_id AND aotr.object_id = 0)";
         }
 
         return $pieces;
