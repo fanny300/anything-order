@@ -2,6 +2,10 @@
 
 Reorder any post types and taxonomies with drag and drop.
 
+
+#NOTE
+I'm not certain if the original repo is being maintained, but I'll be posting fixes here to issue as they come up. Recently posted a couple of fixes for Wordpress 4.7 compatability
+
 ##Description
 
 This plugin allows you to arrange any post types and taxonomies with simple drag and drop within the builtin list table on administration screen.
