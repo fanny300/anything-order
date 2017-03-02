@@ -176,6 +176,10 @@ class Anything_Order_Taxonomy extends Anything_Order_Base {
         $field       = '';
         $select_this = '';
         $values      = array();
+        
+        if (!isset($fields)) {
+			$fields = "";
+		}
 
         switch ( $fields ) {
             case 'all':
