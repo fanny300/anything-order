@@ -140,7 +140,7 @@ class Anything_Order_Taxonomy extends Anything_Order_Base {
 
         extract($args, EXTR_SKIP);
 
-        if ( 'term_order' != $args['orderby'] ) {
+        if (isset($args['orderby']) && 'term_order' != $args['orderby'] ) {
             if ( 'count' == $orderby )
                 $orderby = 'tt.count';
             else if ( 'name' == $orderby )
